@@ -40,11 +40,11 @@ import org.teavm.tooling.*;
  *
  * @author Alexey Andreev
  */
-@Mojo(name = "build-javascript", requiresDependencyResolution = ResolutionScope.COMPILE,
-        requiresDependencyCollection = ResolutionScope.COMPILE)
+@Mojo(name = "build-javascript", requiresDependencyResolution = ResolutionScope.RUNTIME,
+        requiresDependencyCollection = ResolutionScope.RUNTIME)
 public class BuildJavascriptMojo extends AbstractMojo {
     private static Set<String> compileScopes = new HashSet<>(Arrays.asList(
-            Artifact.SCOPE_COMPILE, Artifact.SCOPE_PROVIDED, Artifact.SCOPE_SYSTEM));
+            Artifact.SCOPE_RUNTIME, Artifact.SCOPE_COMPILE, Artifact.SCOPE_PROVIDED, Artifact.SCOPE_SYSTEM));
 
     @Component
     private MavenProject project;
